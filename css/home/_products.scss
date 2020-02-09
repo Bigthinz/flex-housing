@@ -1,0 +1,135 @@
+
+.products-arena{
+
+	.products{
+		width: 100%;
+		display: grid;
+		grid-template-rows: repeat(1, minmax(200px, min-content)) ;
+		grid-template-columns:repeat(auto-fit, minmax(200px,320px) ) ;
+		justify-content: center;
+		align-items: center;
+		margin:30px auto;
+		grid-gap: 20px;
+
+
+		.house-id{
+
+
+			&:hover {
+				box-shadow: 0px 0px 15px 10px rgba(0,0,0,.1);
+				transition: all .2s ease;
+
+			}
+
+			.product-image{
+			width: 100%;
+			position: relative;
+
+
+			h5{
+				margin: 0px;
+			}
+
+
+			img{
+				width: 100%;
+
+			}
+
+			.for-sale{
+				position: absolute;
+				top: 10%;
+				left: 5%;
+				display: block;
+				font-size: 12px;
+				font-weight: bold;
+				width: 70px;
+				padding: 10px 15px;
+				text-align: center;
+				text-transform: uppercase;
+				background: #947054;
+				color: #fff;
+
+			}
+
+			.rent{
+				position: absolute;
+				top: 10%;
+				left: 5%;
+				display: block;
+				font-size: 12px;
+				font-weight: bold;
+				width: 70px;
+				padding: 10px 15px;
+				text-align: center;
+				text-transform: uppercase;
+				background: #c0392b;
+				color: #fff;
+			}
+
+			.price{
+				position: absolute;
+				bottom: 10%;
+				left: 5%;
+				display: block;
+				font-size: 18px;
+				font-weight: bolder;
+				color: rgba(0,0,0,.7);
+				padding: 11px 37px;
+				background: #ffb228;
+			}
+
+		}
+
+		}
+		
+		.product-details{
+			padding:10px 20px;
+			box-sizing: border-box;
+			margin-top: -22px;
+			
+
+			
+
+			span{
+				padding-left: 10px;
+			}
+
+			p{
+				margin: 5px 0px;
+			}
+
+			.icon-details{
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				margin: 20px 0px;
+
+				.icon-digit{
+					margin-left: -9px;
+				}
+
+
+			}
+		}
+
+		a{
+			text-align: center;
+			line-height: 40px;
+			width: 100%;
+			background:#947054;
+			display: block;
+			color: #fff;
+			text-decoration: none;
+			margin-top: -20px;
+			text-transform: uppercase;
+		}
+		
+		
+	}
+}
+
+
+.star{
+	color: #ffb228;
+}
