@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Map</title>
+
+
+<link href='https://api.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.css' rel='stylesheet' />
+<script src='https://api.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.js' ></script>
+
+
+</head>
+
+<style>
+	.view{
+		width: 50vw;
+		height: 100vh;
+
+	}
+
+	#leaf{
+		width: 50vw;
+		height: 100vh;
+		
+	}
+
+	
+</style>
+<body>
+	<h1>Flex Housing Map</h1>
+
+	<div class="view"></div>
+	<div id="leaf"></div>	
+	
+
+
+	<script>
+
+
+		let sunyani ={
+			lat:7.34837,
+			lng:-2.34311
+		}
+
+		
+		
+		var options = {
+			zoom: 15,
+			center: sunyani
+		}
+
+		
+		function initMap(){
+			
+		
+	
+
+			var map = new google.maps.Map(document.querySelector(".view"),options)
+
+
+		/*
+			let marker = new google.maps.Marker(
+				{position :
+					{
+						lat:7.34837,
+						lng:-2.34311
+					},
+					map: map,
+					icon: 'marker3.png'
+				})
+
+
+			let infoWindow = new google.maps.InfoWindow({
+			content: '<h2>University Of Energy</h2>',
+			
+		})
+
+		marker.addListener('click',function(){
+			infoWindow.open(map,marker)
+			
+		})
+		*/
+
+		
+
+
+		addMarker({
+			coords:{
+					lat:7.34837,
+					lng:-2.34311
+				},
+			iconImage:'marker3.png',
+			content: `<h4>University Of Energy</h4>
+						<h5>Sunyani Fiapre</5>
+						<p>affordable</p>
+			`
+			
+		})
+
+		addMarker({
+			coords:{
+					lat:7.34837,
+					lng:-2.35211
+				},
+			iconImage:'marker3.png',
+			content: '<h4>New Hostel</h>'
+			
+		})
+
+
+		addMarker({
+			coords:{
+					lat:7.3505,
+					lng:-2.3487
+				},
+				iconImage:'marker3.png',
+				content: '<h4>Berlin-Top</h4>'
+			})	
+
+
+		addMarker({
+			coords:{
+					lat:7.3445,
+					lng:-2.3487
+				},
+				iconImage:'marker3.png',
+				content: '<h4>SDA downtown</h4>'
+			})	
+
+
+		addMarker({
+			coords:{
+					lat:7.3431,
+					lng:-2.3487
+				},
+				iconImage:'marker3.png',
+				content: '<h4>SDA Tophill</h>'
+			})	
+
+
+
+		function addMarker(props){
+			let marker = new google.maps.Marker(
+				{
+					position:props.coords,
+					map: map
+					
+				})
+
+			if(props.iconImage){
+				marker.setIcon(props.iconImage)
+			}
+
+			if(props.content){
+				let infoWindow = new google.maps.InfoWindow({
+			content: props.content
+			
+			})
+
+			marker.addListener('click',function(){
+			infoWindow.open(map,marker)
+			
+		})
+			}
+		}
+
+
+
+
+
+		}
+
+/*
+var mymap = L.map('leaf').setView([7.34837, -2.34311], 15);
+
+L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    maxZoom: 18,
+    id: 'mapbox/streets-v11',
+    accessToken: 'pk.eyJ1IjoiYmlndGhpbnoiLCJhIjoiY2s2YXdwcHdxMDltcTNscDluMXI5dDJ2dCJ9.-H1bTCDQ_x6vy6Y7VKcGAw'
+}).addTo(mymap);
+
+mapboxgl.accessToken = 'pk.eyJ1IjoiYmlndGhpbnoiLCJhIjoiY2s2YXdwcHdxMDltcTNscDluMXI5dDJ2dCJ9.-H1bTCDQ_x6vy6Y7VKcGAw';
+var map = new mapboxgl.Map({
+container: 'leaf',
+style: 'mapbox://styles/mapbox/streets-v11',
+center: [ -2.34311,7.34837],
+zoom: 14
+});
+
+
+*/
+
+	</script>
+
+
+	<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCOhRvALp3aCmzHnFwF7nIwTgDXMLSbvLs&callback=initMap">
+    </script>
+</body>
+</html>
